@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  python:
+    build:
+      context: .
+      dockerfile: ./container/Dockerfile
+    volumes:
+      - ./src:/app
+      - ./container/requirements.txt:/tmp/requirements.txt
+    tty: true
+    environment:
+      - LOGIN_EMAIL=${LOGIN_EMAIL}
+      - LOGIN_PASSWORD=${LOGIN_PASSWORD}
+#    command: "python main.py"
