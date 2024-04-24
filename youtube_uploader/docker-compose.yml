@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - ./src:/var/task
+    working_dir: /var/task
